@@ -31,6 +31,10 @@
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
 		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 		<org.projectlombok.version>1.18.26</org.projectlombok.version>
+		<jakarta.xml.bind.version>4.0.0</jakarta.xml.bind.version>
+		<org.glassfish.jaxb.version>4.0.2</org.glassfish.jaxb.version>
+		<org.jsonschema2pojo.version>1.2.1</org.jsonschema2pojo.version>
+		<com.fasterxml.jackson.core.version>2.15.2</com.fasterxml.jackson.core.version>
 	</properties>
 
 	<dependencyManagement>
@@ -39,12 +43,23 @@
 			<dependency>
 				<groupId>jakarta.xml.bind</groupId>
 				<artifactId>jakarta.xml.bind-api</artifactId>
-				<version>4.0.0</version>
+				<version>${jakarta.xml.bind.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.glassfish.jaxb</groupId>
 				<artifactId>jaxb-runtime</artifactId>
-				<version>4.0.2</version>
+				<version>${org.glassfish.jaxb.version}</version>
+			</dependency>
+			<!-- jsonschema2pojo -->
+			<dependency>
+				<groupId>org.jsonschema2pojo</groupId>
+				<artifactId>jsonschema2pojo-core</artifactId>
+				<version>${org.jsonschema2pojo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${com.fasterxml.jackson.core.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

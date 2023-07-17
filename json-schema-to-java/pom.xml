@@ -16,22 +16,12 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-      <version>2.1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
+      <groupId>org.jsonschema2pojo</groupId>
+      <artifactId>jsonschema2pojo-core</artifactId>
     </dependency>
   </dependencies>
 
@@ -39,8 +29,24 @@
     <finalName>${project.artifactId}</finalName>
     <plugins>
       <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.jsonschema2pojo</groupId>
+        <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <executions>
+          <execution>
+            <id>generate-java-classes</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <sourceDirectory>json-schema-to-java/src/main/resources/jsonschema</sourceDirectory>
+              <targetPackage>com.github.innovationforge.workshop</targetPackage>
+              <generateBuilders>true</generateBuilders>
+              <includeHashcodeAndEquals>true</includeHashcodeAndEquals>
+              <includeToString>true</includeToString>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
