@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.1.1</version>
+		<relativePath/>
+	</parent>
+
+	<groupId>com.github.innovationforge</groupId>
+	<artifactId>contract-model-generator</artifactId>
+	<version>${revision}</version>
+  <packaging>pom</packaging>
+
+  <name>contract-model-generator</name>
+	<description>Demo project for contract-model-generator Learning</description>
+
+  <modules>
+    <module>xml-schema-to-java</module>
+		<module>json-schema-to-java</module>
+    <module>sample-module</module>
+  </modules>
+
+  <properties>
+		<revision>1.0-SNAPSHOT</revision>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+		<org.projectlombok.version>1.18.26</org.projectlombok.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- JAXB (Java Architecture for XML Binding) -->
+			<dependency>
+				<groupId>jakarta.xml.bind</groupId>
+				<artifactId>jakarta.xml.bind-api</artifactId>
+				<version>4.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish.jaxb</groupId>
+				<artifactId>jaxb-runtime</artifactId>
+				<version>4.0.2</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
